@@ -23,9 +23,9 @@ class HomeControllers extends GetxController {
   // function to change intesity
   void changeIntensity(double value, BuildContext context) {
     intensity.value = value;
-    if (value > 1) {
+    if (value > 0) {
       changeButtonState(true, false, context);
-    } else if (value < 1) {
+    } else if (value == 0) {
       changeButtonState(false, false, context);
     }
     update();
@@ -42,10 +42,10 @@ class HomeControllers extends GetxController {
       sendDataToSocket(205, context);
       changeIntensity(2, context);
     } else if (value > 2 && value <= 3) {
-      sendDataToSocket(210, context);
+      sendDataToSocket(207, context);
       changeIntensity(3, context);
     } else if (value > 3 && value <= 4) {
-      sendDataToSocket(215, context);
+      sendDataToSocket(210, context);
       changeIntensity(4, context);
     } else if (value > 4) {
       sendDataToSocket(255, context);
