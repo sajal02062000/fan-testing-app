@@ -1,0 +1,1 @@
+const shopUrl = "https://www.google.com";
